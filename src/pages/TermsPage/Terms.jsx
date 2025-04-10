@@ -1,10 +1,9 @@
 import React from "react";
+import TermsWrapper from "./termsComponents/termsWrapper";
 
 const Terms=()=>{
     return(
-        <>
-        <div>Terms</div>
-        </>
+        <TermsWrapper></TermsWrapper>
     )
 }
 
