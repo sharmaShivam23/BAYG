@@ -24,7 +24,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       {/* <Route path="/products" element={<Products/>}/> */}
       <Route path="/about" element={<About/>}/>
-      <Route path="/contactus" element={<ContactUs/>}/>
+      <Route path="/locateus" element={<ContactUs/>}/>
       <Route path="/termsofuse" element={<Terms/>}/>
       <Route path="/privacypolicy" element={<Privacy/>}/>
       <Route path="/product/transformer" element={<Products img={img}/>}/>

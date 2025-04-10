@@ -1,3 +1,5 @@
+
+
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -6,6 +8,7 @@ const ContactForm = () => {
     name: "",
     email: "",
     phone: "",
+    msg: "",
   });
 
   const handleChange = (e) => {
@@ -15,79 +18,87 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-
-        // @Shivam , jab API bana le tab yahan change kar lena use, aur ye bhi check kar lena ki ye dhang se kaam kar rha hai ya nahi
-
       const res = await axios.post("http://localhost:5000/api/contact", formData);
       console.log("Form submitted:", res.data);
-      alert("Form submitted successfully! We will contact you soon.");
-      setFormData({ name: "", email: "", phone: "" });
+      setFormData({ name: "", email: "", phone: "", msg: "" });
     } catch (err) {
       console.error("Submission error:", err);
-      alert("Something went wrong. Please try again.");
     }
   };
 
   return (
-    <div className="bg-[#fdf6ef] w-full py-10 px-4">
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row shadow-md border border-gray-300">
-        {/* Left Wali Image Yahan Lagani Hai*/}
+    <div className="bg-[#fdf6ef] w-full py-12 px-4">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row overflow-hidden shadow-xl rounded-lg border border-gray-200">
+        {/* Left Image */}
         <div className="w-full md:w-1/2">
           <img
-            src="/homePageIntroPhoto.png"
-            alt="Map"
-            className="w-full h-full object-cover"
+            src="/men2.png"
+            alt="Contact Visual"
+            className="w-full h-full object-cover rounded-l-lg"
           />
         </div>
 
-        {/* Form Start karna hai yahan se */}
-        <div className="w-full md:w-1/2 bg-[#fdf6ef] p-6 flex flex-col justify-between">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <h2 className="text-lg font-bold">Please Fill Your Details</h2>
+        {/* Contact Form */}
+        <div className="w-full md:w-1/2 bg-white p-8 flex flex-col justify-between">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <h2 className="text-2xl font-bold text-orange-600">Get In Touch</h2>
 
-            <div className="flex flex-col">
-              <label htmlFor="name" className="text-sm font-medium font-mono">Name</label>
+            <div>
+              <label htmlFor="name" className="block text-lg font-semibold mb-1">Name</label>
               <input
                 id="name"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Value"
+                placeholder="Your full name"
                 required
-                className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-orange-500"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 text-md focus:outline-orange-500"
               />
             </div>
 
-            <div className="flex flex-col">
-              <label htmlFor="email" className="text-sm font-medium font-mono">Email</label>
+            <div>
+              <label htmlFor="email" className="block text-lg font-semibold mb-1">Email</label>
               <input
                 id="email"
                 name="email"
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Value"
+                placeholder="example@email.com"
                 required
-                className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-orange-500"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 text-md focus:outline-orange-500"
               />
             </div>
 
-            <div className="flex flex-col">
-              <label htmlFor="phone" className="text-sm font-medium font-mono">Phone Number</label>
+            <div>
+              <label htmlFor="phone" className="block text-lg font-semibold mb-1">Phone Number</label>
               <input
                 id="phone"
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Value"
+                placeholder="+91 XXXXXXXXXX"
                 required
-                className="border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-orange-500"
+                className="w-full border border-gray-300 rounded-md px-4 py-2 text-md focus:outline-orange-500"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="msg" className="block text-lg font-semibold mb-1">Message</label>
+              <textarea
+                id="msg"
+                name="msg"
+                value={formData.msg}
+                onChange={handleChange}
+                placeholder="Type your message..."
+                required
+                className="w-full border border-gray-300 rounded-md px-4 py-2 text-md focus:outline-orange-500 h-28 resize-none"
               />
             </div>
 
             <button
               type="submit"
-              className="bg-orange-500 text-white font-bold py-2 rounded-md hover:bg-orange-600 mt-4 w-full"
+              className="bg-orange-500 text-white font-semibold py-2 rounded-md hover:bg-orange-600 transition duration-200"
             >
               SUBMIT
             </button>
