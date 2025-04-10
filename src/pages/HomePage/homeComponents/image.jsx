@@ -1,11 +1,10 @@
 import React from 'react' ;
-import landingimg from "../../../LandingPage/images/landingimg.svg"
 
 const Image = () => {
   return (
     <div className="relative  w-full h-[60vh] md:h-[70vh] lg:h-[80vh]">
       <img
-        src={landingimg}
+        src="/homePageIntroPhoto.png"
         alt="Hero"
         className="w-full h-full object-cover opacity-100"
       />
