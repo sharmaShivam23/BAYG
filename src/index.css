@@ -17,5 +17,5 @@ html, body, #root {
   }
   
   .animate-slideUpFadeIn {
-    animation: slideUpFadeIn 2s ease-in-out forwards;
+    animation: slideUpFadeIn 1s ease-in-out forwards;
   }  

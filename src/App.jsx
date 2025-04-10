@@ -7,7 +7,7 @@ import Home from './pages/HomePage/Home'
 import NavBar from './components/NavBar' ;
 import Products from './pages/ProductsPage/Products'
 import About from './pages/AboutPage/About'
-import LocateUs from './pages/LocateUsPage/LocateUs'
+import ContactUs from './pages/ContactUsPage/ContactUs'
 import Footer from './components/Footer'
 import Terms from './pages/TermsPage/Terms'
 import Privacy from './pages/PrivacyPolicyPage/Privacy'
@@ -24,7 +24,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       {/* <Route path="/products" element={<Products/>}/> */}
       <Route path="/about" element={<About/>}/>
-      <Route path="/locateus" element={<LocateUs/>}/>
+      <Route path="/contactus" element={<ContactUs/>}/>
       <Route path="/termsofuse" element={<Terms/>}/>
       <Route path="/privacypolicy" element={<Privacy/>}/>
       <Route path="/product/transformer" element={<Products img={img}/>}/>
