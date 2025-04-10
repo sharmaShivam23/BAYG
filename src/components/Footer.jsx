@@ -38,7 +38,7 @@ const Footer = () => {
               <li><Link to="/" className="hover:text-orange-400">Home</Link></li>
               <li><Link to="/about" className="hover:text-orange-400">About Us</Link></li>
               <li><Link to="/products" className="hover:text-orange-400">Products</Link></li>
-              <li><Link to="/locateus" className="hover:text-orange-400">Locate Us</Link></li>
+              <li><Link to="/contactus" className="hover:text-orange-400">Contact Us</Link></li>
             </ul>
           </div>
 
@@ -47,7 +47,6 @@ const Footer = () => {
             <h2 className="font-bold mb-2">Terms & Conditions</h2>
             <ul className="space-y-1 text-sm">
               <li><Link to="/termsofuse" className="hover:text-orange-400">Terms of Use</Link></li>
-              <li><Link to="/privacypolicy" className="hover:text-orange-400">Privacy Policy</Link></li>
             </ul>
           </div>
 
@@ -78,7 +77,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <p className="text-center text-xs text-gray-400 mt-6">Copyright © 2022. All rights reserved.</p>
+        <p className="text-center text-xs text-gray-400 mt-6">Copyright © 2025. All rights reserved.</p>
       </div>
     </footer>
   );

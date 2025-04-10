@@ -4,6 +4,7 @@ import head from "../../../assets/head.svg";
 import triangle from "../../../assets/triangle.svg";
 import { landingPageData } from "./dummyData";
 import { FaArrowAltCircleRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ProductCategories = () => {
   return (
@@ -19,7 +20,7 @@ const ProductCategories = () => {
             </div>
           </div>
 
-          <div className="txt hidden  sm:flex gap-4 absolute top-15 right-28 text-xl">See more <FaArrowAltCircleRight className="mt- text-2xl"/></div>
+          <div className="txt hidden  sm:flex gap-4 absolute top-15 right-28 text-xl">See more<Link to="/products"><FaArrowAltCircleRight className="mt- text-2xl cursor-pointer"/></Link></div>
         </div>
 
         <div className="cards flex flex-wrap justify-center px-10 items-center gap-8">

@@ -62,10 +62,10 @@ export default function NavBar() {
           About Us
         </Link>
         <Link
-          to="/locateus"
+          to="/contactus"
           className="hover:text-orange-400 transition-all ease-out duration-500 delay-0 font-[590] text-lg px-3 py-1 rounded-2xl hover:bg-white"
         >
-          Locate Us
+          Contact Us
         </Link>
       </div>
       </div>
@@ -126,10 +126,10 @@ export default function NavBar() {
             About Us
           </Link>
           <Link
-            to="/locateus"
+            to="/contactus"
             className="block hover:text-orange-400 text-sm px-3 py-1 rounded-2xl hover:bg-white"
           >
-            Locate Us
+            Contact Us
           </Link>
         </div>
       )}
