@@ -15,16 +15,23 @@ import Privacy from './pages/PrivacyPolicyPage/Privacy'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [img , setImg] = useState('')
 
   return (
     <>
-    <NavBar/>
-    <Routes>
+    <NavBar  setImg={setImg}/>
+    <Routes >
       <Route path="/" element={<Home/>}/>
-      <Route path="/products" element={<Products/>}/>
+      {/* <Route path="/products" element={<Products/>}/> */}
       <Route path="/about" element={<About/>}/>
       <Route path="/locateus" element={<LocateUs/>}/>
       <Route path="/termsofuse" element={<Terms/>}/>
+      <Route path="/privacypolicy" element={<Privacy/>}/>
+      <Route path="/product/transformer" element={<Products img={img}/>}/>
+      <Route path="/product/WaterPump" element={<Products img={img}/>}/>
+      <Route path="/product/HomeInverter" element={<Products img={img}/>}/>
+      <Route path="/product/SolarPanel" element={<Products img={img}/>}/>
+      <Route path="/product/cable" element={<Products img={img}/>}/>
       <Route path="/privacypolicy" element={<Privacy/>}/>
     </Routes>
     <Footer/>
