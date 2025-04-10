@@ -2,7 +2,7 @@ import React from 'react' ;
 
 const Image = () => {
   return (
-    <div className="relative  w-full h-[60vh] md:h-[70vh] lg:h-[80vh]">
+    <div className="relative  w-full h-[60vh] md:h-[70vh] lg:h-[90.5vh]">
       <img
         src="/homePageIntroPhoto.png"
         alt="Hero"

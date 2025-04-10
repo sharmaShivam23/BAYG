@@ -20,7 +20,6 @@ const ProductCategories = () => {
             </div>
           </div>
 
-          <div className="txt hidden  sm:flex gap-4 absolute top-15 right-28 text-xl">See more<Link to="/products"><FaArrowAltCircleRight className="mt- text-2xl cursor-pointer"/></Link></div>
         </div>
 
         <div className="cards flex flex-wrap justify-center px-10 items-center gap-8">
@@ -51,13 +50,9 @@ const ProductCategories = () => {
             </div>
           ))}
         </div>
-
-       
-
       </div>
       <div className="flex justify-center items-center">
-      <div className=" h-[80px] w-[87vw] bg-[#FA8B02]">
-      </div>
+        <div className=" h-[80px] w-[87vw] bg-[#FA8B02]"></div>
       </div>
     </div>
   );
