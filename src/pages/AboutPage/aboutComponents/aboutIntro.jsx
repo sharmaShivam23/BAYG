@@ -4,11 +4,11 @@ const AboutIntroSection = () => {
   return (
     <section style={{ backgroundImage: `url("/Vector.svg")`,
       backgroundImage: `url("/Vector.svg")`,
-      backgroundSize: "cover",              // fills entire section
+      backgroundSize: "cover",              
       backgroundRepeat: "no-repeat",
-      backgroundPosition: "center",         // centers the image
+      backgroundPosition: "center",        
       width: "100vw",
-      height: "70vh",
+      height: "80vh",
       }} className="">
     {/* <section style className="bg-gradient-to-r from-orange-100 to-orange-300 py-12 px-4 md:px-16 relative overflow-hidden"> */}
       {/* Wave Part Aayega Yahan */}
