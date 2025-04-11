@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -11,18 +11,32 @@ import ContactUs from './pages/ContactUsPage/ContactUs'
 import Footer from './components/Footer'
 import Terms from './pages/TermsPage/Terms'
 import Privacy from './pages/PrivacyPolicyPage/Privacy'
+import Splash from './pages/Splash'
 
 
 function App() {
   const [count, setCount] = useState(0)
   const [img , setImg] = useState('')
+  const [splashScreen , setSplash] = useState(true)
+
+  useEffect(() => {
+   const time = setTimeout(() => {
+      setSplash(false)
+   },3000)
+
+   return () => setTimeout(time)
+  },[])
+
+
 
   return (
     <>
+    {splashScreen ? <Splash/> : (
+      <>
     <NavBar  setImg={setImg}/>
     <Routes >
       <Route path="/" element={<Home/>}/>
-      {/* <Route path="/products" element={<Products/>}/> */}
+      <Route path="/products" element={<Products/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/locateus" element={<ContactUs/>}/>
       <Route path="/termsofuse" element={<Terms/>}/>
@@ -35,6 +49,8 @@ function App() {
       <Route path="/privacypolicy" element={<Privacy/>}/>
     </Routes>
     <Footer/>
+    </>
+  )}
     </>
   )
 }
