@@ -12,7 +12,7 @@ const AboutIntroSection = () => {
       }} className="">
     {/* <section style className="bg-gradient-to-r from-orange-100 to-orange-300 py-12 px-4 md:px-16 relative overflow-hidden"> */}
       {/* Wave Part Aayega Yahan */}
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-white rounded-t-[100%]"></div>
+      {/* <div className="absolute bottom-0 left-0 w-full h-20 bg-white rounded-t-[100%]"></div> */}
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between relative z-10">
         {/* Left Content Yahan Aayega */}

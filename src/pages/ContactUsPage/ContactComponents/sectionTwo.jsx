@@ -30,7 +30,7 @@ const ContactCards = () => {
   ];
 
   return (
-    <div className="w-full bg-[#fdf6ef] py-10 mt-16 px-4">
+    <div className="w-full bg-[#fdf6ef] py-32  mt-32 sm:mt-24 px-4">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 justify-center items-center flex-wrap">
         {cardData.map((card, index) => (
           <div

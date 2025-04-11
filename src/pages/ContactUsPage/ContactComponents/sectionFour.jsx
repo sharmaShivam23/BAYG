@@ -1,15 +1,24 @@
 
-
-import React, { useState } from "react";
+import React, { useState , useRef} from "react";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
+import toast, { Toaster } from "react-hot-toast";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    phone: "",
-    msg: "",
+    Phone: "",
+    message: "",
+    recaptchaValue: "",
   });
+
+  const reset = useRef(null)
+
+  const handleRecaptchaChange = (captchaValue) => {
+    console.log("Recaptcha:", captchaValue);
+    setFormData({ ...formData, recaptchaValue: captchaValue });
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -17,17 +26,50 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if(!Valid()){
+      return
+    }
     try {
-      const res = await axios.post("http://localhost:5000/api/contact", formData);
-      console.log("Form submitted:", res.data);
-      setFormData({ name: "", email: "", phone: "", msg: "" });
+      const res = await axios.post("https://baygbackend.onrender.com/bayg/contact", formData);
+      console.log("Form submitted:", res);
+       toast.success(res.data.message)
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        Phone: "",
+        message: "",
+        recaptchaValue: "",
+      });
+      reset.current.reset()
     } catch (err) {
-      console.error("Submission error:", err);
+      console.error(err);
+      toast.error(err.response.data.message)
     }
   };
 
+
+  function Valid(){
+    if(formData.name.length < 3){
+      toast.error("Name must contain at least 2 characters")
+      return false
+    }
+    else if(formData.Phone.length != 10){
+      toast.error("Invalid phone number")
+      return false
+    }
+    else if(formData.message.length < 10){
+      toast.error("message is too short")
+      return false
+    }
+    return true
+
+  }
+
   return (
     <div className="bg-[#fdf6ef] w-full py-12 px-4">
+       <Toaster/>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row overflow-hidden shadow-xl rounded-lg border border-gray-200">
         {/* Left Image */}
         <div className="w-full md:w-1/2">
@@ -71,11 +113,11 @@ const ContactForm = () => {
             </div>
 
             <div>
-              <label htmlFor="phone" className="block text-lg font-semibold mb-1">Phone Number</label>
+              <label htmlFor="Phone" className="block text-lg font-semibold mb-1">Phone Number</label>
               <input
-                id="phone"
-                name="phone"
-                value={formData.phone}
+                id="Phone"
+                name="Phone"
+                value={formData.Phone}
                 onChange={handleChange}
                 placeholder="+91 XXXXXXXXXX"
                 required
@@ -84,17 +126,28 @@ const ContactForm = () => {
             </div>
 
             <div>
-              <label htmlFor="msg" className="block text-lg font-semibold mb-1">Message</label>
+              <label htmlFor="message" className="block text-lg font-semibold mb-1">Message</label>
               <textarea
-                id="msg"
-                name="msg"
-                value={formData.msg}
+                id="message"
+                name="message"
+                value={formData.message}
                 onChange={handleChange}
                 placeholder="Type your message..."
                 required
                 className="w-full border border-gray-300 rounded-md px-4 py-2 text-md focus:outline-orange-500 h-28 resize-none"
               />
             </div>
+
+            {/* <div className="flex gap-2 sm:w-1/2  justify-center items-center cursor-pointer w-full"> */}
+              <div className="flex justify-center items-center z-50">
+                <ReCAPTCHA
+                ref={reset}
+                  sitekey="6Le3-QArAAAAADn9ym4vDs6qMQN3DpD0yZe183m-"
+                  onChange={handleRecaptchaChange}
+                  className="cursor-pointer"
+                />
+              </div>
+            {/* </div> */}
 
             <button
               type="submit"

@@ -9,7 +9,7 @@ const ImageComp = () => {
       <img
         src="/contactPagePhotoOne.png"
         alt="Hero"
-        className="w-full h-full object-cover"
+        className="w-full h-[91vh] object-cover"
       />
       <div className="absolute inset-0 bg-opacity-40">
         <div className="absolute bottom-14 left-6 sm:left-12 lg:left-20">

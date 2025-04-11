@@ -90,7 +90,7 @@ export default function NavBar({ setImg }) {
               to="/locateus"
               className="hover:text-orange-400 cursor-pointer transition duration-300 px-3 py-1 rounded-2xl hover:bg-white"
             >
-              Locate Us
+              Contact Us
             </Link>
           </div>
 
@@ -163,7 +163,7 @@ export default function NavBar({ setImg }) {
               to="/locateus"
               className="block hover:text-orange-400 px-3 py-2 rounded-2xl hover:bg-white"
             >
-              Locate Us
+             Contact Us
             </Link>
           </motion.div>
         )}
