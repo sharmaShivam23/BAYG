@@ -1,5 +1,4 @@
-
-import React, { useState , useRef} from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import toast, { Toaster } from "react-hot-toast";
@@ -13,10 +12,11 @@ const ContactForm = () => {
     recaptchaValue: "",
   });
 
-  const reset = useRef(null)
+  const reset = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   const handleRecaptchaChange = (captchaValue) => {
-    console.log("Recaptcha:", captchaValue);
+    // console.log("Recaptcha:", captchaValue);
     setFormData({ ...formData, recaptchaValue: captchaValue });
   };
 
@@ -27,13 +27,17 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if(!Valid()){
-      return
+    if (!Valid()) {
+      return;
     }
+    setLoading(true);
     try {
-      const res = await axios.post("https://baygbackend.onrender.com/bayg/contact", formData);
-      console.log("Form submitted:", res);
-       toast.success(res.data.message)
+      const res = await axios.post(
+        "https://baygbackend.onrender.com/bayg/contact",
+        formData
+      );
+      // console.log("Form submitted:", res);
+      toast.success(res.data.message);
       // Reset form
       setFormData({
         name: "",
@@ -42,34 +46,36 @@ const ContactForm = () => {
         message: "",
         recaptchaValue: "",
       });
-      reset.current.reset()
+      reset.current.reset();
     } catch (err) {
-      console.error(err);
-      toast.error(err.response.data.message)
+      // console.error(err);
+      if(err.response.data){
+      toast.error(err.response.data.message);
+      }else {
+        toast.error("Something went wrong. Please try again later.");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
-
-  function Valid(){
-    if(formData.name.length < 3){
-      toast.error("Name must contain at least 2 characters")
-      return false
+  function Valid() {
+    if (formData.name.length < 3) {
+      toast.error("Name must contain at least 2 characters");
+      return false;
+    } else if (formData.Phone.length != 10) {
+      toast.error("Invalid phone number");
+      return false;
+    } else if (formData.message.length < 10) {
+      toast.error("message is too short");
+      return false;
     }
-    else if(formData.Phone.length != 10){
-      toast.error("Invalid phone number")
-      return false
-    }
-    else if(formData.message.length < 10){
-      toast.error("message is too short")
-      return false
-    }
-    return true
-
+    return true;
   }
 
   return (
     <div className="bg-[#fdf6ef] w-full py-12 px-4">
-       <Toaster/>
+      <Toaster />
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row overflow-hidden shadow-xl rounded-lg border border-gray-200">
         {/* Left Image */}
         <div className="w-full md:w-1/2">
@@ -86,7 +92,12 @@ const ContactForm = () => {
             <h2 className="text-2xl font-bold text-orange-600">Get In Touch</h2>
 
             <div>
-              <label htmlFor="name" className="block text-lg font-semibold mb-1">Name</label>
+              <label
+                htmlFor="name"
+                className="block text-lg font-semibold mb-1"
+              >
+                Name
+              </label>
               <input
                 id="name"
                 name="name"
@@ -99,7 +110,12 @@ const ContactForm = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-lg font-semibold mb-1">Email</label>
+              <label
+                htmlFor="email"
+                className="block text-lg font-semibold mb-1"
+              >
+                Email
+              </label>
               <input
                 id="email"
                 name="email"
@@ -113,7 +129,12 @@ const ContactForm = () => {
             </div>
 
             <div>
-              <label htmlFor="Phone" className="block text-lg font-semibold mb-1">Phone Number</label>
+              <label
+                htmlFor="Phone"
+                className="block text-lg font-semibold mb-1"
+              >
+                Phone Number
+              </label>
               <input
                 id="Phone"
                 name="Phone"
@@ -126,7 +147,12 @@ const ContactForm = () => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-lg font-semibold mb-1">Message</label>
+              <label
+                htmlFor="message"
+                className="block text-lg font-semibold mb-1"
+              >
+                Message
+              </label>
               <textarea
                 id="message"
                 name="message"
@@ -139,21 +165,31 @@ const ContactForm = () => {
             </div>
 
             {/* <div className="flex gap-2 sm:w-1/2  justify-center items-center cursor-pointer w-full"> */}
-              <div className="flex justify-center items-center z-50">
-                <ReCAPTCHA
+            <div className="flex justify-center items-center ">
+              <ReCAPTCHA
                 ref={reset}
-                  sitekey="6Le3-QArAAAAADn9ym4vDs6qMQN3DpD0yZe183m-"
-                  onChange={handleRecaptchaChange}
-                  className="cursor-pointer"
-                />
-              </div>
+                sitekey="6Le3-QArAAAAADn9ym4vDs6qMQN3DpD0yZe183m-"
+                onChange={handleRecaptchaChange}
+                className="cursor-pointer"
+              />
+            </div>
             {/* </div> */}
+
 
             <button
               type="submit"
-              className="bg-orange-500 text-white font-semibold py-2 rounded-md hover:bg-orange-600 transition duration-200"
+              disabled={loading}
+              className="bg-orange-500 cursor-pointer text-white font-semibold h-[40px] rounded-md hover:bg-orange-600 transition duration-200 flex items-center justify-center"
             >
-              SUBMIT
+              {loading ? (
+                <span className="flex space-x-1">
+                  <span className="w-2 h-2 bg-white rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                  <span className="w-2 h-2 bg-white rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                  <span className="w-2 h-2 bg-white rounded-full animate-bounce"></span>
+                </span>
+              ) : (
+                "Submit"
+              )}
             </button>
           </form>
         </div>
