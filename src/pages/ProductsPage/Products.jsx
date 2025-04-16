@@ -12,7 +12,7 @@ const Products = ({img}) => {
     <div className="p h-auto max-w-[90vw] m-auto py-16">
       {/* first sec */}
       <div className="p flex justify-center w-[90vw]">
-        <div className="img h-auto md:h-[55vh] w-full   sm:w-[80vw] sm:flex-row flex-col md:p-16 flex justify-between items-center bg-[#E7E7E7] shadow-[4px_2px_9px_rgba(0,0,0,1)]">
+        <div className="img h-auto md:h-[55vh] w-full   sm:w-[80vw] sm:flex-row flex-col md:p-16 flex justify-between items-center  shadow-[4px_2px_9px_rgba(0,0,0,1)]">
           <div className="left p-12">
             <div className="txt text-xl md:text-3xl xl:text-5xl font-bold text-black max-w-[100px] tracking-wider">
               BEST QUALITY TOOL
@@ -30,7 +30,7 @@ const Products = ({img}) => {
           <div className="ri">
             <img
               src={img}
-              className="object-contain h-[50vh]"
+              className="object-contain p-6 h-[40vh]"
               alt=""
             />
           </div>

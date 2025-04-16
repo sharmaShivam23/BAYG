@@ -3,7 +3,7 @@ export const productData = [
     {
       id: 1,
       title: "Housekeeping Essentials",
-      image: "/homePageIntroPhoto.png",
+      image: "/i1.png",
       details: [
         "Cleaning Tools: Industrial mops, brooms, vacuum cleaners",
         "Disinfectants & Chemicals: Sanitizers, surface cleaners, degreasers",
@@ -13,7 +13,7 @@ export const productData = [
     {
       id: 2,
       title: "Stationery & Computers",
-      image: "/homePageIntroPhoto.png",
+      image: "/p1.jpg",
       details: [
         "Office Supplies: Notebooks, pens, binders, folders",
         "Printers & Peripherals: Inkjet & laser printers, scanners",
@@ -23,7 +23,7 @@ export const productData = [
     {
       id: 3,
       title: "Horticulture & Agriculture Machine Spares",
-      image: "/homePageIntroPhoto.png",
+      image: "/p2.jpg",
       details: [
         "Sprayers: Power sprayers, battery sprayers",
         "Chaff Cutters & Weed Cutters: Manual & motorized",
@@ -34,7 +34,7 @@ export const productData = [
     {
       id: 4,
       title: "Hardware",
-      image: "/homePageIntroPhoto.png",
+      image: "/p3.jpg",
       details: [
         "Fasteners: Screws, bolts, nuts, washers, anchors",
         "Valves: Ball valves, gate valves, butterfly valves",
@@ -46,7 +46,7 @@ export const productData = [
     {
       id: 5,
       title: "Industrial Tools & Consumables",
-      image: "/homePageIntroPhoto.png",
+      image: "/p4.jpg",
       details: [
         "Hand Tools: Wrenches, pliers, screwdrivers, hammers",
         "Power Tools: Drills, grinders, saws, impact wrenches",
@@ -58,7 +58,7 @@ export const productData = [
     {
       id: 6,
       title: "Machinery & Spare Parts",
-      image: "/homePageIntroPhoto.png",
+      image: "/p5.jpg",
       details: [
         "Motors & Pumps: Electric motors, submersible pumps, hydraulic pumps",
         "Compressors & Blowers: Industrial air compressors, blower",
@@ -69,7 +69,7 @@ export const productData = [
     {
       id: 7,
       title: "Safety & Packaging Solutions",
-      image: "/homePageIntroPhoto.png",
+      image: "/p6.jpg",
       details: [
         "Personal Protective Equipment (PPE): Helmets, gloves, eye protection, safety boots",
         "Lockout/Tagout Solutions: Safety locks, warning tags",
@@ -78,7 +78,7 @@ export const productData = [
     {
       id: 8,
       title: "Electricals & Lighting",
-      image: "/homePageIntroPhoto.png",
+      image: "/p8.jpg",
       details: [
         "Lighting Solutions: LED bulbs, tube lights, industrial lighting",
         "Wiring & Cables: Copper cables, industrial wiring solutions",
@@ -125,7 +125,7 @@ export const landingPageData = [
 
         id: 5,
         img :  "/s5.webp",
-         text : "Godrej Forte Pro 15L Alloy Steel Grey Safe Locker with Mechanical Key Lock"
+         text : "Godrej Forte Pro  Alloy Steel Grey  Locker with Mechanical Key Lock"
 
       },
       {
@@ -146,7 +146,7 @@ export const landingPageData = [
 
         id: 8,
         img : "/s8.webp",
-         text : "TP-Link Tapo T110 868/922MHz Window Door Safeguard Smart Contact Sensor"
+         text : "TP-Link Tapo  Window Door Safeguard Smart Contact Sensor"
 
       },
       
@@ -174,7 +174,7 @@ export const productData2 = [
 
         id: 3,
         img : "/c3.webp",
-         text : "Hillgrove 1200W Demolition Hammer Concrete Breaker with 2 Bits, HGCM934"
+         text : "Hillgrove  Demolition Hammer Concrete Breaker with 2 Bits"
 
       },
       {
@@ -188,21 +188,21 @@ export const productData2 = [
 
         id: 5,
         img : "/c5.webp",
-         text : "Hillgrove HGCM19M1 11000rpm Angle Grinder with Gloves"
+         text : "Hillgrove  11000rpm Angle Grinder with Gloves"
 
       },
       {
 
         id: 6,
         img : "/c6.webp",
-         text : "Imported 100mm 1050W 11000rpm Electric Angle Grinder, BP-CH-008"
+         text : "Imported 100mm 1050W 11000rpm Electric Angle Grinder"
 
       },
       {
 
         id: 7,
         img : "/c7.webp",
-         text : "Jakmister 600W 15000rpm Red Unbreakable Plastic Electric Air Blower"
+         text : "Jakmister  Red Unbreakable Plastic Electric Air Blower"
 
       },
       {
@@ -216,14 +216,14 @@ export const productData2 = [
 
         id: 9,
         img : "/c9.webp",
-         text : "Imported 13mm 250W Mini Electric Bench Drill Machine, SAC-BD-913"
+         text : "Imported 13mm 250W Mini Electric Bench Drill Machine"
 
       },
       {
 
         id: 10,
         img : "/c10.webp",
-         text : "Imported 10mm 400W Electric Drill Machine with Trinity Switch, CM-ET-21988"
+         text : "Imported 10mm 400W Electric Drill Machine , CM-ET-21988"
 
       },
       {
@@ -277,12 +277,12 @@ export const productData3 = [
   export const pro = [
     {
       tag : "transformer",
-      img : "/",
+      img : "/trans.webp",
       link : "/product/transformer"
     },
     {
       tag : "Water Pumps",
-      img : "/cpumps.webp",
+      img : "/cpump.webp",
       link : "/product/WaterPump"
     },
     {

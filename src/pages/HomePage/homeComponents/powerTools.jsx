@@ -21,8 +21,8 @@ const ProductCategories = () => {
           </div>
 
         </div>
-
-        <div className="cards flex flex-wrap justify-center px-10 items-center gap-8">
+        <div className="f flex justify-center items-center">
+        <div className="cards flex flex-wrap w-[71vw] justify-center px-10 items-center gap-8">
           {landingPageData.map((item, index) => (
             <div
               key={index}
@@ -35,8 +35,8 @@ const ProductCategories = () => {
                   className="object-contain absolute top-2.5 h-40 max-h-full"
                 />
               </div>
-
-              <p className="text-sm text-black cursor-pointer hover:bg-[#FA8B02] hover:text-white h-[80px] flex justify-center items-center font-[600] transition-all ease-in-out duration-700 absolute text-left bottom-1  px-12">
+             {/* <div className="p"></div> */}
+              <p className="text-sm text-black cursor-pointer hover:bg-[#FA8B02] hover:text-white h-[85px] flex justify-center items-center font-[600] transition-all ease-in-out mb-0 duration-700 absolute text-left bottom-1  px-12">
                 {item.text}
               </p>
 
@@ -49,6 +49,7 @@ const ProductCategories = () => {
               <div className="absolute bottom-0 w-full border-t-[6px] border-[#FA8B02]"></div>
             </div>
           ))}
+        </div>
         </div>
       </div>
       <div className="flex justify-center items-center">

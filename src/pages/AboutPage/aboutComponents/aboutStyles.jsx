@@ -44,7 +44,7 @@ const AboutLastSection = () => {
       {/* <div className="grid gap-10 md:grid-cols-3 lg:grid-cols-3 max-w-6xl mx-auto"> */}
         {features.map((feature, index) => (
           <div key={index} className="flex flex-col items-center">
-            <div className="bg-[#FA8B02] w-[100px] h-[100px] flex items-center justify-center rounded-full mb-4 shadow-md">
+            <div className="bg-[#FA8B02] w-[100px] h-[100px] hover:scale-110 transition-all ease-in-out duration-300 flex items-center justify-center rounded-full mb-4 shadow-md">
               {feature.icon}
             </div>
             <h3 className="font-bold text-xl sm:text-2xl">{feature.title}</h3>

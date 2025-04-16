@@ -14,11 +14,11 @@ const Carousel = () => {
   const settings = {
     dots: false,
     infinite: true,
-    speed: 800,
+    speed: 1200,
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 1000,
     arrows: true,
     pauseOnHover: false,
     responsive: [
@@ -52,38 +52,33 @@ const Carousel = () => {
 
   const data = [
     {
-      img: "/s10.webp",
-      // details:
-      // "Sameer 22 inch 58cc Chainsaw, SC-58",
-      height: "[55vh]",
-    },
-    {
-      img: "/r1.webp",
+      img: "/a1.webp",
       // details:
       // "Ahuja 50-15000Hz Microphone, ADM-511",
       height: "[55vh]",
     },
     {
-      img: "/r2.webp",
+      img: "/a2.webp",
       // details:
       // "Sceptre 12v 1450mm with 1-15mm b",
 
       height: "[800px]",
     },
     {
-      img: "/r3.webp",
+      img: "/a3.webp",
       // details:
       // "Sceptre 12v 1450mm with 1-15mm b",
       height: "[800px]",
     },
     {
-      img: "/r4.webp",
+      img: "/a31.webp",
+      // img: "/r4.webp",
       // details:
       // "Sceptre 12v 1450mm with 1-15mm b",
       height: "[800px]",
     },
     {
-      img: "/r5.webp",
+      img: "/a6.webp",
       // details:
       // "Sceptre 12v 1450mm with 1-15mm b",
       height: "[800px]",
@@ -108,6 +103,24 @@ const Carousel = () => {
     },
     {
       img: "/r9.webp",
+      // details:
+      // "Sceptre 12v 1450mm with 1-15mm b",
+      height: "[800px]",
+    },
+    {
+      img: "/a7.webp",
+      // details:
+      // "Sceptre 12v 1450mm with 1-15mm b",
+      height: "[800px]",
+    },
+    {
+      img: "/a8.webp",
+      // details:
+      // "Sceptre 12v 1450mm with 1-15mm b",
+      height: "[800px]",
+    },
+    {
+      img: "/a9.webp",
       // details:
       // "Sceptre 12v 1450mm with 1-15mm b",
       height: "[800px]",

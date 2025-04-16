@@ -65,14 +65,14 @@ export default function NavBar({ setImg }) {
               Home
             </Link>
             <div className="hover:text-orange-400 cursor-pointer transition duration-300 px-3 py-1 rounded-2xl hover:bg-white">
-              <select className="cursor-pointer" onChange={handleChange}>
-                <option value="section" className="text-orange-400">
+              <select className="cursor-pointer border-none outline-none" onChange={handleChange}>
+                <option value="section" className="text-orange-400 border-none outline-none">
                   Products
                 </option>
                 {pro.map((it, index) => (
                   <option
                     key={index}
-                    className="cursor-pointer text-orange-400"
+                    className="cursor-pointer border-none outline-none  text-orange-400"
                     value={index}
                   >
                     {it.tag}
@@ -139,8 +139,8 @@ export default function NavBar({ setImg }) {
             >
               Home
             </Link>
-            <select className="cursor-pointer ml-14 font-bold " onChange={handleChange}>
-              <option value="section" className="text-orange-400">
+            <select className="cursor-pointer border-none ml-14 font-bold " onChange={handleChange}>
+              <option value="section" className="text-orange-400 border-none outline-none">
                 Products
               </option>
               {pro.map((it, index) => (

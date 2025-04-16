@@ -35,7 +35,7 @@ const ContactCards = () => {
         {cardData.map((card, index) => (
           <div
             key={index}
-            className={`flex flex-col gap-2 p-6  rounded-lg shadow-md w-full sm:w-[300px] items-center text-center ${
+            className={`flex flex-col gap-2 p-6 hover:scale-105 transition-all ease-in-out duration-300 rounded-lg shadow-md w-full sm:w-[300px] items-center text-center ${
               card.dark ? "bg-[#1e232f] text-white" : "bg-gray-100 text-black"
             }`}
           >
