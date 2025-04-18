@@ -6,10 +6,13 @@ import triangle from "../../assets/triangle.svg";
 import { productData3 } from "../HomePage/homeComponents/dummyData";
 import Carousel from "./ProductCarousel";
 import { productData } from "../HomePage/homeComponents/dummyData";
+import { Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Products = ({img}) => {
+  const navigate = useNavigate()
   return (
-    <div className="p h-auto max-w-[90vw] m-auto py-16">
+    <div className="p mt-28 h-auto max-w-[90vw] m-auto py-16">
       {/* first sec */}
       <div className="p flex justify-center w-[90vw]">
         <div className="img h-auto md:h-[55vh] w-full   sm:w-[80vw] sm:flex-row flex-col md:p-16 flex justify-between items-center  shadow-[4px_2px_9px_rgba(0,0,0,1)]">
@@ -20,10 +23,12 @@ const Products = ({img}) => {
             <div className="txt text-xl sm:text-2xl font-bold text-black mt-3">
               Designed to Deliver. Built to Last
             </div>
-            <div className="btn">
-              <button className="mt-12 bg-[#FA8B02] text-white text-sm flex justify-center items-center p-4 rounded-xl font-[550]">
-                EXPLORE MORE
+            <div  className="btn cursor-pointer">
+              <Link to="/locateus">
+              <button   className="mt-12 bg-[#FA8B02] cursor-pointer text-white text-sm flex justify-center items-center p-4 rounded-xl font-[550]">
+                Contact Us
               </button>
+              </Link>
             </div>
           </div>
 

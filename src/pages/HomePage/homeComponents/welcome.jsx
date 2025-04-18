@@ -15,7 +15,7 @@ const Welcome=()=>{
     </div>
     <div className="flex-1  p-4 rounded">
       {/* Right wala part yahan*/}
-      <div className="w-[80%] mx-auto sm:px-4 py-10 text-center md:text-left">
+      <div className="sm:w-[80%] w-[100%] mx-auto sm:px-4 py-10 text-center md:text-left">
   <p className="text-gray-500 uppercase text-xs sm:text-lg font-semibold mb-2">Welcome to our site!</p>
   <h1 className="text-2xl md:text-4xl font-bold mb-4">
     We are the best company for your visit

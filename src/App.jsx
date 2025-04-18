@@ -12,12 +12,26 @@ import Footer from './components/Footer'
 import Terms from './pages/TermsPage/Terms'
 import Privacy from './pages/PrivacyPolicyPage/Privacy'
 import Splash from './pages/Splash'
+// import { GoToTop } from './components/Top'
+import Top from './components/Top'
+import { useLocation } from 'react-router-dom'
 
 
 function App() {
   const [count, setCount] = useState(0)
   const [img , setImg] = useState('')
   const [splashScreen , setSplash] = useState(true)
+
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, [location.pathname]);
+
+
 
   useEffect(() => {
    const time = setTimeout(() => {
@@ -27,6 +41,7 @@ function App() {
    return () => setTimeout(time)
   },[])
 
+ 
 
 
   return (
@@ -34,6 +49,7 @@ function App() {
     {splashScreen ? <Splash/> : (
       <>
     <NavBar  setImg={setImg}/>
+    <Top/>
     <Routes >
       <Route path="/" element={<Home/>}/>
       <Route path="/products" element={<Products/>}/>

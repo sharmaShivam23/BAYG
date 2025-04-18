@@ -22,21 +22,21 @@ const ProductCategories = () => {
 
         </div>
         <div className="f flex justify-center items-center">
-        <div className="cards flex flex-wrap w-[71vw] justify-center px-10 items-center gap-8">
+        <div className="cards flex flex-wrap  justify-center px-10 items-center gap-8">
           {landingPageData.map((item, index) => (
             <div
               key={index}
-              className="relative w-[253px] h-[250px] bg-white shadow-lg mt-8  overflow-hidden"
+              className="relative w-[253px] max-[310px]:w-[200px]  max-[310px]:h-[200px]    h-[250px] bg-white shadow-lg mt-8  overflow-hidden"
             >
               <div className="flex justify-center items-center h-full">
                 <img
                   src={item.img}
                   alt="img"
-                  className="object-contain absolute top-2.5 h-40 max-h-full"
+                  className="object-contain absolute max-[310px]:h-32 top-2.5 h-40 max-h-full"
                 />
               </div>
              {/* <div className="p"></div> */}
-              <p className="text-sm text-black cursor-pointer hover:bg-[#FA8B02] hover:text-white h-[85px] flex justify-center items-center font-[600] transition-all ease-in-out mb-0 duration-700 absolute text-left bottom-1  px-12">
+              <p className="text-sm max-[310px]:text-[8px]  text-black cursor-pointer hover:bg-[#FA8B02] hover:text-white h-[85px] flex justify-center items-center font-[600] transition-all ease-in-out mb-0 duration-700 absolute text-left bottom-1  px-12">
                 {item.text}
               </p>
 

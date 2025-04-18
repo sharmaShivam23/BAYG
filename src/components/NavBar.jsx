@@ -45,7 +45,7 @@ export default function NavBar({ setImg }) {
       ></div>
 
       {/* Navbar */}
-      <nav className="bg-[#202730] sticky top-0 z-40 backdrop-blur-xl text-white shadow-md">
+      <nav className="bg-[#202730] fixed w-[100%] top-0 z-40 backdrop-blur-xl text-white shadow-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-[80px]">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">

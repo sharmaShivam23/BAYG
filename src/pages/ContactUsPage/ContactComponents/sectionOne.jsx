@@ -9,10 +9,10 @@ const ImageComp = () => {
       <img
         src="/contactPagePhotoOne.png"
         alt="Hero"
-        className="w-full h-[91vh] object-cover"
+        className="w-full h-[100vh] object-cover"
       />
       <div className="absolute inset-0 bg-opacity-40">
-        <div className="absolute bottom-14 left-6 sm:left-12 lg:left-20">
+        <div className="absolute bottom-0 left-6 sm:left-12 lg:left-20">
           <h1 className="text-white tracking-wider font-poppins text-2xl sm:text-4xl md:text-5xl font-bold text-left animate-slideUpFadeIn">
             Get In Touch <br /> With BAYG
           </h1>

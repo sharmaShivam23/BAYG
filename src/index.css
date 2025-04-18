@@ -1,9 +1,14 @@
 /* index.css or global stylesheet */
-html, body, #root {
+html,  #root {
     height: 100%;
     margin: 0;
-    overflow-x : hidden;
+    /* overflow-x : hidden; */
   }
+
+
+ body{
+  overflow-x : hidden;
+ }
 
   @keyframes slideUpFadeIn {
     0% {
